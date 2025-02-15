@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat online</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://unpkg.com/ionicons@5.5.2/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Righteous&display=swap">
+</head>
+<body>
+    <div class="container">
+        <div class="topo">
+            <img src="imagem/62f625d9852515569aa51967d5654788.png" alt="imagem bate papo">
+            <ul>
+                <li><ion-icon name="people-circle-outline" onclick="abrirMenu()">abrir menu</ion-icon></li>
+            </ul>
+        </div>
+
+        <div id="cobrir">
+            
+            <div class="menuLateral" id="sidebar">
+                <ul>
+                    <li><ion-icon name="close-outline" onclick="abrirMenu()" class="fecharMenu">fechar menu</ion-icon></li>
+                </ul>
+                <div class="titulo"><p>Escolha um contato <br>para enviar mensagem:</p></div>
+                <div id="participantesLista"></div>
+                <div class="titulo"><p>Escolha a visibilidade:</p></div>
+                <div class="opcoesBox">
+                    <input type="radio" name="visibilidade" checked onclick="setVisibility('Todos')"> Público
+                </div>
+                <div class="opcoesBox">
+                    <input type="radio" name="visibilidade" onclick="setVisibility('Reservadamente')"> Reservadamente
+                </div>
+                
+            </div>
+        </div>
+
+        
+        <div class="containerChat" id="containerChat"></div>
+
+
+        <div class="rodape">
+            <div class="input-container">
+                <input class="texto" type="text" placeholder="Escreva aqui..." id="mensagemEnviada">
+                <span class="texto-abaixo" id="destinoMensagem">Enviar para Todos (pulbico)</span>
+            </div>
+            <button onclick="enviarMensagem()" class="botaoEnviar">
+                <ul>
+                    <li><ion-icon name="send-outline"></ion-icon></li>
+                </ul>
+            </button>
+        </div>
+        
+    </div>
+</body>
+<script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="script.js"></script>
+</html>

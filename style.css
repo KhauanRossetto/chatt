@@ -1,0 +1,158 @@
+.topo {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100; /* Valor alto para garantir que esteja na frente */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* x-offset, y-offset, blur-radius, color */
+    position: fixed; /* Deixa o topo fixo */
+    top: 0; /* Fixa no topo da página */
+    width: 100%; /* Ocupa toda a largura da página */
+    background-color: white; /* Adicione um fundo para evitar sobreposição de elementos */
+}
+
+
+.topo img {
+    height: 55px;
+    margin-top: 17px;
+    margin-left: 3vw;
+}
+.topo ul li {
+    font-size: 50px; 
+    margin-right: 2.5vw;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.rodape {
+    width: 100%;
+    height: 80px;
+    box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3); /* x-offset, y-offset, blur-radius, color */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    z-index: 100; /* Valor mais alto para garantir que esteja na frente */
+    background-color: white; /* Adicione um fundo para evitar sobreposição de elementos */
+}
+
+.mensagens{
+    font-size: 14px;
+    border-radius: 10px;
+    margin: 5px 0;
+    color: #333;
+}
+
+.mensagens.chatBox{
+    background-color: white;
+    height: 40px;
+    border-radius: 10px;
+}
+.mensagens.chatReservado{
+    background-color: #FFDEDE;
+    height: 45px;
+    border-radius: 10px;
+}
+.mensagens.entrada{
+    background-color:#DCDCDC;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.input-container.reservadamente {
+    background-color: #FFDEDE;
+}
+
+
+.rodape .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    
+}
+.rodape ul li {
+    margin-right: 23px;    
+    font-size: 27px;
+    cursor: pointer;
+}
+#cobrir {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none; /* Escondido inicialmente */
+    z-index: 1000; /* Colocado acima do menu lateral */
+}
+/* Adicione esta regra ao seu CSS existente */
+.menuLateral {
+    position: fixed;
+    right: -250px; /* Menu inicialmente escondido fora da tela */
+    width: 250px;
+    height: 100%;
+    background-color: #ffffff;
+    transition: right 0.3s ease-in-out; /* Adiciona a transição */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 4; /* Valor muito alto para garantir que esteja na frente de tudo */
+}
+.opcoes {
+    padding: 15px 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Adicionado para alinhamento vertical */
+    font-size: 16px;
+    border-bottom: 1px solid #ffffff;
+    margin-left: 10px;
+}
+
+
+.fecharMenu{
+    font-size: 25px;
+    cursor: pointer;
+}
+.titulo p{
+    font-size: 20px;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.opcoesBox{
+    margin-left: 27px;
+    margin-top: 10px;
+}
+.texto {
+    width: 60vw;
+    padding: 10px;
+    border: none;
+    outline: none;
+}
+.texto::placeholder {
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-style: italic;
+    font-weight: bolder;
+    color: #000000;
+}
+.texto-abaixo {
+    font-size: 13px;
+    color: gray;
+    margin-bottom: 10px;
+}
+.input-container span{
+    margin-left: 10px;
+}
+.botaoEnviar{
+    border: none;
+    background-color: white;
+}
+.containerChat {
+    padding: 20px;
+    margin-top: 75px;
+    max-width: 500px;
+    margin-bottom: 80px;
+    overflow-y: auto;
+    max-height: 100%;
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
