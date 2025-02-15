@@ -2,58 +2,62 @@
     height: 80px;
     display: flex;
     justify-content: space-between;
-    z-index: 100; /* Valor alto para garantir que esteja na frente */
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3); /* x-offset, y-offset, blur-radius, color */
-    position: fixed; /* Deixa o topo fixo */
-    top: 0; /* Fixa no topo da página */
-    width: 100%; /* Ocupa toda a largura da página */
-    background-color: white; /* Adicione um fundo para evitar sobreposição de elementos */
+    z-index: 100;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
 }
-
 
 .topo img {
     height: 55px;
     margin-top: 17px;
     margin-left: 3vw;
 }
+
 .topo ul li {
-    font-size: 50px; 
+    font-size: 50px;
     margin-right: 2.5vw;
     margin-top: 20px;
     cursor: pointer;
 }
+
 .rodape {
     width: 100%;
     height: 80px;
-    box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3); /* x-offset, y-offset, blur-radius, color */
+    box-shadow: 5px -5px 10px rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
     bottom: 0;
-    z-index: 100; /* Valor mais alto para garantir que esteja na frente */
-    background-color: white; /* Adicione um fundo para evitar sobreposição de elementos */
+    z-index: 100;
+    background-color: white;
 }
 
-.mensagens{
+.mensagens {
     font-size: 14px;
     border-radius: 10px;
-    margin: 5px 0;
+    padding: 10px;
     color: #333;
+    margin: 2px;
 }
 
-.mensagens.chatBox{
+.mensagens.chatBox {
     background-color: white;
     height: 40px;
     border-radius: 10px;
 }
-.mensagens.chatReservado{
+
+.mensagens.chatReservado {
     background-color: #FFDEDE;
-    height: 45px;
+    height: 40px;
     border-radius: 10px;
 }
-.mensagens.entrada{
-    background-color:#DCDCDC;
+
+.mensagens.entrada {
+    background-color: #DCDCDC;
     height: 40px;
     border-radius: 10px;
 }
@@ -62,18 +66,18 @@
     background-color: #FFDEDE;
 }
 
-
 .rodape .input-container {
     display: flex;
     flex-direction: column;
     margin-left: 15px;
-    
 }
+
 .rodape ul li {
-    margin-right: 23px;    
+    margin-right: 23px;
     font-size: 27px;
     cursor: pointer;
 }
+
 #cobrir {
     position: fixed;
     top: 0;
@@ -81,52 +85,80 @@
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none; /* Escondido inicialmente */
-    z-index: 1000; /* Colocado acima do menu lateral */
+    display: none;
+    z-index: 1000;
 }
-/* Adicione esta regra ao seu CSS existente */
+
 .menuLateral {
     position: fixed;
-    right: -250px; /* Menu inicialmente escondido fora da tela */
+    right: -250px;
     width: 250px;
     height: 100%;
     background-color: #ffffff;
-    transition: right 0.3s ease-in-out; /* Adiciona a transição */
+    transition: right 0.3s ease-in-out;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    z-index: 4; /* Valor muito alto para garantir que esteja na frente de tudo */
+    z-index: 4;
 }
+
 .opcoes {
-    padding: 15px 20px;
-    cursor: pointer;
+    margin-left: 25px;
     display: flex;
-    justify-content: space-between;
-    align-items: center; /* Adicionado para alinhamento vertical */
+    justify-content: flex-start;
+    align-items: center;
     font-size: 16px;
-    border-bottom: 1px solid #ffffff;
-    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
+.opcoes span {
+    margin-left: 6px;
+}
 
-.fecharMenu{
+.opcao {
+    display: flex;
+    align-items: center;
+    margin-bottom: 6px;
+    background-color: #f8f8f8;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 25px;
+}
+
+.opcao input {
+    margin-right: 10px;
+}
+
+.opcao span {
+    font-size: 16px;
+    margin-right: 10px;
+    color: #181717;
+    margin-left: 3px;
+}
+
+.fecharMenu {
     font-size: 25px;
     cursor: pointer;
 }
-.titulo p{
+
+.titulo p {
     font-size: 20px;
     align-items: center;
     margin-top: 20px;
     margin-left: 30px;
 }
-.opcoesBox{
+
+.opcoesBox {
     margin-left: 27px;
     margin-top: 10px;
 }
+
 .texto {
     width: 60vw;
     padding: 10px;
     border: none;
     outline: none;
 }
+
 .texto::placeholder {
     font-size: 18px;
     font-family: 'Roboto', sans-serif;
@@ -134,18 +166,22 @@
     font-weight: bolder;
     color: #000000;
 }
+
 .texto-abaixo {
     font-size: 13px;
     color: gray;
     margin-bottom: 10px;
 }
-.input-container span{
+
+.input-container span {
     margin-left: 10px;
 }
-.botaoEnviar{
+
+.botaoEnviar {
     border: none;
     background-color: white;
 }
+
 .containerChat {
     padding: 20px;
     margin-top: 75px;
@@ -153,6 +189,36 @@
     margin-bottom: 80px;
     overflow-y: auto;
     max-height: 100%;
-    margin-left: auto; /* Centraliza horizontalmente */
-    margin-right: auto; /* Centraliza horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mensagens {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    padding: 2px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.mensagens span, .mensagens strong {
+    margin-right: 5px;
+}
+
+.mensagens.entrada {
+    background-color: #DCDCDC;
+    text-align: center;
+}
+
+.mensagens.chatReservado {
+    background-color: #FFDEDE;
+    text-align: center;
+}
+
+.mensagens.chatBox {
+    background-color: white;
+    text-align: left;
 }

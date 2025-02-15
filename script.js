@@ -22,10 +22,10 @@ function enviarMensagem() {
             text: message,
             type: visibility === 'Reservadamente' ? 'private_message' : 'message'
         };
-        axios.post('https://mock-api.driven.com.br/api/v6/uol/messages/aea4deed-d4ae-46eb-bbba-6bbc418b71cc', messageData)
+        axios.post('https://mock-api.driven.com.br/api/v6/uol/messages/9ff4055d-913d-43d8-9d84-c32a4e18b3fa', messageData)
         .then(() => {
             messageInput.value = '';
-            carregarmensagem(); // Recarrega as mensagens após o envio
+            carregarmensagem(); 
         })
         .catch((error) => {
             console.error('Erro ao enviar mensagem:', error);
@@ -40,7 +40,7 @@ function enviarMensagem() {
 document.getElementById('mensagemEnviada').addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         event.preventDefault();
-        enviarMensagem(); // Envia a mensagem quando pressionar "Enter"
+        enviarMensagem(); 
     }
 });
 
@@ -55,19 +55,19 @@ function promptNomeUsuario() {
     entrarNaSala();
 }
 
-const UUID = "aea4deed-d4ae-46eb-bbba-6bbc418b71cc"; // Define UUID
-let visibility = "Todos"; // Definido como "Todos" por padrão
-let destination = "Todos"; // Definido como "Todos" por padrão
+const UUID = "9ff4055d-913d-43d8-9d84-c32a4e18b3fa"; 
+let visibility = "Todos"; 
+let destination = "Todos"; 
 
 function entrarNaSala() {
-    axios.post(`https://mock-api.driven.com.br/api/v6/uol/participants/aea4deed-d4ae-46eb-bbba-6bbc418b71cc`, { name: userName })
+    axios.post(`https://mock-api.driven.com.br/api/v6/uol/participants/9ff4055d-913d-43d8-9d84-c32a4e18b3fa`, { name: userName })
         .then(() => {
             console.log("Entrou na sala com sucesso!");
             iniciarChat();
         })
         .catch(() => {
             console.log("Nome de usuário já existe, escolha outro.");
-            promptNomeUsuario(); // Se o nome já existir, pede novamente
+            promptNomeUsuario(); 
         });
 }
 
@@ -80,12 +80,12 @@ function iniciarChat() {
 }
 
 function manterLigado() {
-    axios.post(`https://mock-api.driven.com.br/api/v6/uol/status/aea4deed-d4ae-46eb-bbba-6bbc418b71cc`, { name: userName })
+    axios.post(`https://mock-api.driven.com.br/api/v6/uol/status/9ff4055d-913d-43d8-9d84-c32a4e18b3fa`, { name: userName })
         .catch(() => location.reload());
 }
 
 function carregarmensagem() {
-    axios.get(`https://mock-api.driven.com.br/api/v6/uol/messages/aea4deed-d4ae-46eb-bbba-6bbc418b71cc`)
+    axios.get(`https://mock-api.driven.com.br/api/v6/uol/messages/9ff4055d-913d-43d8-9d84-c32a4e18b3fa`)
         .then(response => {
             const messages = response.data;
             const containerChat = document.getElementById("containerChat");
@@ -119,13 +119,13 @@ function carregarmensagem() {
 
 
 function participantesCarregados(){
-    axios.get(`https://mock-api.driven.com.br/api/v6/uol/participants/aea4deed-d4ae-46eb-bbba-6bbc418b71cc`)
+    axios.get(`https://mock-api.driven.com.br/api/v6/uol/participants/9ff4055d-913d-43d8-9d84-c32a4e18b3fa`)
         .then(response => {
             const participantsList = document.getElementById("participantesLista");
             participantsList.innerHTML = `
                 <div class="opcoes">
-                    <span>Todos</span>
                     <input type="radio" name="participant" checked onclick="setDestination('Todos')">
+                    <span>Todos</span>
                 </div>
 
             `;
@@ -134,8 +134,9 @@ function participantesCarregados(){
                 const participantOption = document.createElement("div");
                 participantOption.classList.add("opcao");
                 participantOption.innerHTML = `
+                    <input  type="radio" name="participant" onclick="setDestination('${participant.name}')">
                     <span>${participant.name}</span>
-                    <input type="radio" name="participant" onclick="setDestination('${participant.name}')">
+
                 `;
                 participantsList.appendChild(participantOption);
             });
@@ -157,4 +158,4 @@ function destinoDaMensagem() {
     document.getElementById("destinoMensagem").textContent = `Enviando para ${destination} ${destinationText}`;
 }
 
-promptUserName(); // Chama a função para pedir o nome do usuário
+promptUserName(); 
